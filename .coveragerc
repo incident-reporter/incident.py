@@ -1,0 +1,9 @@
+[run]
+source =
+    incident
+    tests
+
+[report]
+exclude_lines =
+    pragma: no cover
+    raise NotImplementedError
