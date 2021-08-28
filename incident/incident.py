@@ -44,7 +44,7 @@ class Incident:
 
         message = '\n\n'.join(
             f'{x.state.emoji} **{x.state.name}**: {x.message}\n'
-            f'*{self.format_time(x.when)}*'
+            f'{self.format_time(x.when)}'
             for x in updates
         )
 
@@ -83,4 +83,4 @@ class Incident:
 
     @staticmethod
     def format_time(time):
-        return time.strftime('%Y-%m-%d %H:%M:%S (UTC%z)')
+        return f"<t:{int(time.timestamp())}>"
