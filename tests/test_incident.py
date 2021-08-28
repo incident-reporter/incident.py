@@ -24,7 +24,7 @@ def test_simple():
     outage = incident.STATE_OUTAGE
     assert inc.json['embeds'][0]['description'] == f'''\
 {outage.emoji} **{outage.name}**: We got an outage
-*time*\
+time\
 '''
 
 
@@ -93,8 +93,8 @@ def test_default():
 
 def test_time():
     t = datetime.datetime.fromisoformat('2021-01-01T00:00:00+00:00')
-    assert incident.Incident.format_time(t) == '2021-01-01 00:00:00 (UTC+0000)'
+    assert incident.Incident.format_time(t) == '<t:1609459200>'
 
     timezone = datetime.timezone(datetime.timedelta(seconds=7200))  # UTC+2
     t = t.astimezone(timezone)
-    assert incident.Incident.format_time(t) == '2021-01-01 02:00:00 (UTC+0200)'
+    assert incident.Incident.format_time(t) == '<t:1609459200>'
