@@ -34,11 +34,11 @@ setup(
     keywords='incident-reporter discord-webhook',
     name='incident.py',
     packages=find_packages(include=['incident', 'incident.*']),
-    tests_require=['pytest>=6.2,<7'],
+    tests_require=['pytest>=6.2,<8'],
     url='https://github.com/incident-reporter/incident.py',
     version=version,
     zip_safe=False,
     extras_require={
-        'tests': ['pytest>=6.2,<7']
+        'tests': ['pytest>=6.2,<8']
     }
 )
